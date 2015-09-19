@@ -1,8 +1,3 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by Fernflower decompiler)
-//
-
 package demo.cli.cli;
 
 import java.io.IOException;
@@ -25,7 +20,6 @@ import org.springframework.shell.support.logging.HandlerUtils;
 import org.springframework.util.StopWatch;
 
 public class BootShim {
-    //private static final String[] CONTEXT_PATH = new String[]{"classpath*:/META-INF/spring/spring-shell-plugin.xml"};
     private static BootShim bootstrap;
     private static StopWatch sw = new StopWatch("Spring Shell");
     private static CommandLine commandLine;
@@ -42,8 +36,6 @@ public class BootShim {
             throw new ShellException(var5.getMessage(), var5);
         }
 
-        //this.ctx = new GenericApplicationContext();
-        //this.ctx.registerShutdownHook();
         this.configureApplicationContext(this.ctx);
         ClassPathBeanDefinitionScanner scanner = new ClassPathBeanDefinitionScanner((BeanDefinitionRegistry) this.ctx);
         if(commandLine.getDisableInternalCommands()) {
@@ -52,9 +44,6 @@ public class BootShim {
             scanner.scan(new String[]{"org.springframework.shell.commands", "org.springframework.shell.converters", "org.springframework.shell.plugin.support"});
         }
 
-        //XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(this.ctx);
-        //reader.loadBeanDefinitions(contextPath);
-        //this.ctx.refresh();
     }
 
     public ApplicationContext getApplicationContext() {
